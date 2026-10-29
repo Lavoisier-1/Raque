@@ -43,7 +43,42 @@
     height: 180px;
   }
 }
-  
+ 
+/* Visor de fotografías */
+.photo-lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.94);
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px 20px;
+}
+
+.photo-lightbox.active {
+  display: flex;
+}
+
+.photo-lightbox img {
+  max-width: 95%;
+  max-height: 85vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.photo-lightbox .photo-close {
+  position: absolute;
+  top: 12px;
+  right: 22px;
+  color: white;
+  background: transparent;
+  border: 0;
+  font-size: 36px;
+  cursor: pointer;
+}
+ 
 <style>
 :root {
   --bg: #151515;
@@ -399,6 +434,47 @@ document.getElementById("lang").addEventListener("click", function () {
 });
 document.getElementById("year").textContent = new Date().getFullYear();
 </script>
+  
+<div class="photo-lightbox" id="photoLightbox">
+  <button class="photo-close" id="photoClose" aria-label="Cerrar fotografía">&times;</button>
+  <img id="photoLightboxImage" src="" alt="Fotografía ampliada">
+</div>
+
+<script>
+  const photoLightbox = document.getElementById('photoLightbox');
+  const photoLightboxImage = document.getElementById('photoLightboxImage');
+  const photoClose = document.getElementById('photoClose');
+
+  document.querySelectorAll('.photo-grid .project img').forEach(function(photo) {
+    photo.style.cursor = 'zoom-in';
+
+    photo.addEventListener('click', function() {
+      photoLightboxImage.src = photo.src;
+      photoLightboxImage.alt = photo.alt;
+      photoLightbox.classList.add('active');
+    });
+  });
+
+  function closePhotoLightbox() {
+    photoLightbox.classList.remove('active');
+    photoLightboxImage.src = '';
+  }
+
+  photoClose.addEventListener('click', closePhotoLightbox);
+
+  photoLightbox.addEventListener('click', function(event) {
+    if (event.target === photoLightbox) {
+      closePhotoLightbox();
+    }
+  });
+
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+      closePhotoLightbox();
+    }
+  });
+</script>
+  
 </body>
   </html>
   
