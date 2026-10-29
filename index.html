@@ -154,14 +154,17 @@ h2 {
   gap: 50px;
   align-items: start;
 }
-.about-mark {
+.about-photo {
+  width: 100%;
+  align-self: start;
+}
+
+.about-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
   border: 1px solid #4a443d;
-  min-height: 240px;
-  display: grid;
-  place-items: center;
-  color: var(--accent);
-  font-size: 5rem;
-  letter-spacing: -.08em;
 }
 .skills {
   display: flex;
@@ -360,7 +363,10 @@ footer {
 
   <section id="about">
     <div class="about-grid">
-      <div class="about-mark">R.</div>
+      <div class="about-photo">
+  <img src="images/raque-sobre-mi.jpg"
+       alt="Miriam Nápoli durante un rodaje audiovisual">
+</div>
       <div>
         <span class="eyebrow" data-es="Sobre mí" data-en="About me">Sobre mí</span>
         <h2 data-es="Imágenes, ideas y experiencias." data-en="Images, ideas and experiences.">Imágenes, ideas y experiencias.</h2>
