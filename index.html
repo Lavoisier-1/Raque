@@ -37,9 +37,16 @@ header {
   border-bottom: 1px solid var(--line);
 }
 .logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  letter-spacing: .12em;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo img {
+  display: block;
+  width: 76px;
+  height: 76px;
+  object-fit: contain;
 }
 nav { display: flex; gap: 22px; align-items: center; }
 nav a, .language {
@@ -260,7 +267,9 @@ footer {
 </head>
 <body>
 <header>
-  <a class="logo" href="#home">RAQUE<span style="color:var(--accent)">.</span></a>
+  <a class="logo" href="#home" aria-label="Raqué, inicio">
+  <img src="images/raque-logo-blanco-transparente.png" alt="Raqué Audiovisual">
+</a>
   <nav>
     <a href="#work" data-es="PROYECTOS" data-en="PROJECTS">PROYECTOS</a>
     <a href="#photo" data-es="FOTOGRAFÍA" data-en="PHOTOGRAPHY">FOTOGRAFÍA</a>
