@@ -6,69 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#151515">
 <meta name="description" content="Raque — Portfolio audiovisual, realización cinematográfica y fotografía de Miriam Nápoli.">
-<title>Raque | Audiovisual & Photography</title>
-  
-.photo-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
-  align-items: start;
-}
-
-.photo-grid .project {
-  display: block;
-  min-width: 0;
-  overflow: hidden;
-}
-
-.photo-grid .project img {
-  display: block;
-  width: 100%;
-  height: 280px;
-  object-fit: cover;
-  border-radius: 4px;
-}
-
-.photo-grid .project h3 {
-  margin-top: 12px;
-}
-
-@media (max-width: 700px) {
-  .photo-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
-  }
-
-  .photo-grid .project img {
-    height: 180px;
-  }
-}
- 
-
-
-.photo-lightbox.active {
-  display: flex;
-}
-
-.photo-lightbox img {
-  max-width: 95%;
-  max-height: 85vh;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-}
-
-.photo-lightbox .photo-close {
-  position: absolute;
-  top: 12px;
-  right: 22px;
-  color: white;
-  background: transparent;
-  border: 0;
-  font-size: 36px;
-  cursor: pointer;
-}
- 
+<title>Raque | Audiovisual &amp; Photography</title>
 <style>
 :root {
   --bg: #151515;
@@ -245,6 +183,67 @@ footer {
   color: var(--muted);
   font-size: .78rem;
 }
+
+/* Galería fotográfica */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  align-items: start;
+}
+.photo-grid .project {
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+}
+.photo-grid .project img {
+  display: block;
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.photo-grid .project h3 { margin-top: 12px; }
+
+/* Visor para ampliar las fotografías */
+.photo-lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, .94);
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px 20px;
+}
+.photo-lightbox.active { display: flex; }
+.photo-lightbox img {
+  max-width: 95%;
+  max-height: 85vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+.photo-lightbox .photo-close {
+  position: absolute;
+  top: 12px;
+  right: 22px;
+  color: white;
+  background: transparent;
+  border: 0;
+  font-size: 36px;
+  cursor: pointer;
+  line-height: 1;
+}
+.photo-grid .project img { cursor: zoom-in; }
+
+@media (max-width: 700px) {
+  .photo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .photo-grid .project img { height: 180px; }
+}
 @media (max-width: 650px) {
   header { padding: 17px 5%; flex-wrap: wrap; }
   nav { order: 3; width: 100%; gap: 16px; flex-wrap: wrap; }
@@ -257,14 +256,6 @@ footer {
   .section-head { align-items: start; flex-direction: column; }
   footer { padding: 22px 6%; flex-direction: column; }
 }
-  .photo-grid .project img {
-  display: block;
-  width: 100%;
-  height: 280px;
-  object-fit: cover;
-  border-radius: 4px;
-}
-  
 </style>
 </head>
 <body>
@@ -280,138 +271,120 @@ footer {
 </header>
 
 <main>
-<section class="hero" id="home">
-  <span class="eyebrow" data-es="Realización audiovisual · Fotografía"
-  data-en="Filmmaking · Photography">Realización audiovisual · Fotografía</span>
-  <h1 data-es="Imágenes que cuentan historias."
-  data-en="Images that tell stories.">Imágenes que cuentan historias.</h1>
-  <p data-es="Soy Miriam Nápoli, realizadora audiovisual y fotógrafa. Trabajo con imágenes, relatos y personas para construir experiencias visuales."
-  data-en="I'm Miriam Nápoli, an audiovisual filmmaker and photographer. I work with images, stories and people to create visual experiences.">Soy Miriam Nápoli, realizadora audiovisual y fotógrafa. Trabajo con imágenes, relatos y personas para construir experiencias visuales.</p>
-  <a class="cta" href="#work" data-es="EXPLORAR PROYECTOS ↘"
-  data-en="EXPLORE PROJECTS ↘">EXPLORAR PROYECTOS ↘</a>
-</section>
+  <section class="hero" id="home">
+    <span class="eyebrow" data-es="Realización audiovisual · Fotografía" data-en="Filmmaking · Photography">Realización audiovisual · Fotografía</span>
+    <h1 data-es="Imágenes que cuentan historias." data-en="Images that tell stories.">Imágenes que cuentan historias.</h1>
+    <p data-es="Soy Miriam Nápoli, realizadora audiovisual y fotógrafa. Trabajo con imágenes, relatos y personas para construir experiencias visuales."
+       data-en="I'm Miriam Nápoli, an audiovisual filmmaker and photographer. I work with images, stories and people to create visual experiences.">Soy Miriam Nápoli, realizadora audiovisual y fotógrafa. Trabajo con imágenes, relatos y personas para construir experiencias visuales.</p>
+    <a class="cta" href="#work" data-es="EXPLORAR PROYECTOS ↘" data-en="EXPLORE PROJECTS ↘">EXPLORAR PROYECTOS ↘</a>
+  </section>
 
-<section id="work">
-  <div class="section-head">
-    <div>
-      <span class="eyebrow" data-es="Selección de trabajos" data-en="Selected work">Selección de trabajos</span>
-      <h2 data-es="Audiovisual" data-en="Film & Audiovisual">Audiovisual</h2>
+  <section id="work">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow" data-es="Selección de trabajos" data-en="Selected work">Selección de trabajos</span>
+        <h2 data-es="Audiovisual" data-en="Film &amp; Audiovisual">Audiovisual</h2>
+      </div>
+      <p class="intro" data-es="Cine, narración y desarrollo de proyectos." data-en="Film, storytelling and creative development.">Cine, narración y desarrollo de proyectos.</p>
     </div>
-    <p class="intro" data-es="Cine, narración y desarrollo de proyectos."
-    data-en="Film, storytelling and creative development.">Cine, narración y desarrollo de proyectos.</p>
-  </div>
-  <div class="grid">
-    <article class="project">
-      <div class="project-art"><span>01 / Film</span></div>
-      <h3 data-es="Cortometrajes" data-en="Short films">Cortometrajes</h3>
-      <p data-es="Realización · Asistencia de dirección · Producción"
-      data-en="Filmmaking · Assistant directing · Production">Realización · Asistencia de dirección · Producción</p>
-    </article>
-    <article class="project">
-      <div class="project-art"><span>02 / Fiction</span></div>
-      <h3 data-es="Proyectos de ficción" data-en="Fiction projects">Proyectos de ficción</h3>
-      <p data-es="Desarrollo narrativo · Guion · Dirección"
-      data-en="Story development · Screenwriting · Directing">Desarrollo narrativo · Guion · Dirección</p>
-    </article>
-  </div>
-</section>
-
-<section id="photo">
-  <div class="section-head">
-    <div>
-      <span class="eyebrow" data-es="La mirada" data-en="The perspective">La mirada</span>
-      <h2 data-es="Fotografía" data-en="Photography">Fotografía</h2>
+    <div class="grid">
+      <article class="project">
+        <div class="project-art"><span>01 / Film</span></div>
+        <h3 data-es="Cortometrajes" data-en="Short films">Cortometrajes</h3>
+        <p data-es="Realización · Asistencia de dirección · Producción" data-en="Filmmaking · Assistant directing · Production">Realización · Asistencia de dirección · Producción</p>
+      </article>
+      <article class="project">
+        <div class="project-art"><span>02 / Fiction</span></div>
+        <h3 data-es="Proyectos de ficción" data-en="Fiction projects">Proyectos de ficción</h3>
+        <p data-es="Desarrollo narrativo · Guion · Dirección" data-en="Story development · Screenwriting · Directing">Desarrollo narrativo · Guion · Dirección</p>
+      </article>
     </div>
-    <p class="intro" data-es="Personas, acontecimientos y momentos que merecen ser contados."
-    data-en="People, events and moments worth telling stories about.">Personas, acontecimientos y momentos que merecen ser contados.</p>
-  </div>
-  <div class="grid">
-    
-  <div class="grid photo-grid">
-    <article class="project">
-      <img src="images/167539727_10222919801570891_3141188989013659645_n.jpg" alt="Fotografía 1" loading="lazy">
-      <h3>Eventos y cultura</h3>
-      <p>Cobertura fotográfica.</p>
-    </article>
-    <article class="project">
-      <img src="images/487130456_10233060315397399_5447747652889975349_n%20(1)%20(1).jpg" alt="Fotografía 2" loading="lazy">
-      <h3>Eventos y cultura</h3>
-      <p>Personas y momentos.</p>
-    </article>
-    <article class="project">
-      <img src="images/505814473_10234089469405606_503349318313703175_n%20(1).jpg" alt="Fotografía 3" loading="lazy">
-      <h3>Fotografía documental</h3>
-      <p>Historias en imágenes.</p>
-    </article>
-    <article class="project">
-      <img src="images/505848551_10234081465285508_5727832706973108061_n%20(1).jpg" alt="Fotografía 4" loading="lazy">
-      <h3>Personas e historias</h3>
-      <p>Retratos y momentos espontáneos.</p>
-    </article>
-    <article class="project">
-      <img src="images/505916501_10234089471525659_4150935935172473964_n%20(1).jpg" alt="Fotografía 5" loading="lazy">
-      <h3>Eventos y cultura</h3>
-      <p>Registro de acontecimientos.</p>
-    </article>
-    <article class="project">
-      <img src="images/748208138736903.6222f291d5448.jpg" alt="Fotografía 6" loading="lazy">
-      <h3>Fotografía</h3>
-      <p>Composición y mirada visual.</p>
-    </article>
-    <article class="project">
-      <img src="images/9330a5148110861.62cf5ead5baad.jpg" alt="Fotografía 7" loading="lazy">
-      <h3>Fotografía</h3>
-      <p>Una historia en cada imagen.</p>
-    </article>
-    <article class="project">
-      <img src="images/d6b73e138736245.6222ec48ab072.jpg" alt="Fotografía 8" loading="lazy">
-      <h3>Fotografía</h3>
-      <p>Personas, espacios y detalles.</p>
-    </article>
-    <article class="project">
-      <img src="images/eb9735135717489.61ecdb8a540cc.jpg" alt="Fotografía 9" loading="lazy">
-      <h3>Fotografía</h3>
-      <p>Selección de trabajos.</p>
-    </article>
-  </div>
-</section>
+  </section>
 
-</section>
+  <section id="photo">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow" data-es="La mirada" data-en="The perspective">La mirada</span>
+        <h2 data-es="Fotografía" data-en="Photography">Fotografía</h2>
+      </div>
+      <p class="intro" data-es="Personas, acontecimientos y momentos que merecen ser contados." data-en="People, events and moments worth telling stories about.">Personas, acontecimientos y momentos que merecen ser contados.</p>
+    </div>
+    <div class="photo-grid">
+      <article class="project">
+        <img src="images/167539727_10222919801570891_3141188989013659645_n.jpg" alt="Fotografía 1" loading="lazy">
+        <h3>Eventos y cultura</h3><p>Cobertura fotográfica.</p>
+      </article>
+      <article class="project">
+        <img src="images/487130456_10233060315397399_5447747652889975349_n%20(1)%20(1).jpg" alt="Fotografía 2" loading="lazy">
+        <h3>Eventos y cultura</h3><p>Personas y momentos.</p>
+      </article>
+      <article class="project">
+        <img src="images/505814473_10234089469405606_503349318313703175_n%20(1).jpg" alt="Fotografía 3" loading="lazy">
+        <h3>Fotografía documental</h3><p>Historias en imágenes.</p>
+      </article>
+      <article class="project">
+        <img src="images/505848551_10234081465285508_5727832706973108061_n%20(1).jpg" alt="Fotografía 4" loading="lazy">
+        <h3>Personas e historias</h3><p>Retratos y momentos espontáneos.</p>
+      </article>
+      <article class="project">
+        <img src="images/505916501_10234089471525659_4150935935172473964_n%20(1).jpg" alt="Fotografía 5" loading="lazy">
+        <h3>Eventos y cultura</h3><p>Registro de acontecimientos.</p>
+      </article>
+      <article class="project">
+        <img src="images/748208138736903.6222f291d5448.jpg" alt="Fotografía 6" loading="lazy">
+        <h3>Fotografía</h3><p>Composición y mirada visual.</p>
+      </article>
+      <article class="project">
+        <img src="images/9330a5148110861.62cf5ead5baad.jpg" alt="Fotografía 7" loading="lazy">
+        <h3>Fotografía</h3><p>Una historia en cada imagen.</p>
+      </article>
+      <article class="project">
+        <img src="images/d6b73e138736245.6222ec48ab072.jpg" alt="Fotografía 8" loading="lazy">
+        <h3>Fotografía</h3><p>Personas, espacios y detalles.</p>
+      </article>
+      <article class="project">
+        <img src="images/eb9735135717489.61ecdb8a540cc.jpg" alt="Fotografía 9" loading="lazy">
+        <h3>Fotografía</h3><p>Selección de trabajos.</p>
+      </article>
+    </div>
+  </section>
 
-<section id="about">
-  <div class="about-grid">
-    <div class="about-mark">R.</div>
-    <div>
-      <span class="eyebrow" data-es="Sobre mí" data-en="About me">Sobre mí</span>
-      <h2 data-es="Imágenes, ideas y experiencias."
-      data-en="Images, ideas and experiences.">Imágenes, ideas y experiencias.</h2>
-      <p class="intro" data-es="Soy Licenciada en Producción Audiovisual, con formación en artes audiovisuales y experiencia en proyectos creativos, rodajes y cobertura fotográfica de eventos. Me interesa el cruce entre narración, imagen y nuevas tecnologías."
-      data-en="I hold a degree in Audiovisual Production, with a background in audiovisual arts and experience in creative projects, film sets and event photography. I'm interested in the intersection of storytelling, images and emerging technologies.">Soy Licenciada en Producción Audiovisual, con formación en artes audiovisuales y experiencia en proyectos creativos, rodajes y cobertura fotográfica de eventos. Me interesa el cruce entre narración, imagen y nuevas tecnologías.</p>
-      <div class="skills">
-        <span>Dirección / Directing</span>
-        <span>Producción / Production</span>
-        <span>Fotografía / Photography</span>
-        <span>Guion / Screenwriting</span>
-        <span>360° & VR</span>
+  <section id="about">
+    <div class="about-grid">
+      <div class="about-mark">R.</div>
+      <div>
+        <span class="eyebrow" data-es="Sobre mí" data-en="About me">Sobre mí</span>
+        <h2 data-es="Imágenes, ideas y experiencias." data-en="Images, ideas and experiences.">Imágenes, ideas y experiencias.</h2>
+        <p class="intro" data-es="Soy Licenciada en Producción Audiovisual, con formación en artes audiovisuales y experiencia en proyectos creativos, rodajes y cobertura fotográfica de eventos. Me interesa el cruce entre narración, imagen y nuevas tecnologías."
+           data-en="I hold a degree in Audiovisual Production, with a background in audiovisual arts and experience in creative projects, film sets and event photography. I'm interested in the intersection of storytelling, images and emerging technologies.">Soy Licenciada en Producción Audiovisual, con formación en artes audiovisuales y experiencia en proyectos creativos, rodajes y cobertura fotográfica de eventos. Me interesa el cruce entre narración, imagen y nuevas tecnologías.</p>
+        <div class="skills">
+          <span>Dirección / Directing</span>
+          <span>Producción / Production</span>
+          <span>Fotografía / Photography</span>
+          <span>Guion / Screenwriting</span>
+          <span>360° &amp; VR</span>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="contact">
-  <span class="eyebrow" data-es="Hablemos" data-en="Let's connect">Hablemos</span>
-  <h2 data-es="¿Creamos algo juntos?" data-en="Let's create something together.">¿Creamos algo juntos?</h2>
-  <p class="intro" data-es="Para proyectos, colaboraciones y oportunidades profesionales."
-  data-en="For projects, collaborations and professional opportunities.">Para proyectos, colaboraciones y oportunidades profesionales.</p>
-  <a class="email" href="mailto:mivanapoli@gmail.com">mivanapoli@gmail.com</a>
-</section>
+  <section id="contact">
+    <span class="eyebrow" data-es="Hablemos" data-en="Let's connect">Hablemos</span>
+    <h2 data-es="¿Creamos algo juntos?" data-en="Let's create something together.">¿Creamos algo juntos?</h2>
+    <p class="intro" data-es="Para proyectos, colaboraciones y oportunidades profesionales." data-en="For projects, collaborations and professional opportunities.">Para proyectos, colaboraciones y oportunidades profesionales.</p>
+    <a class="email" href="mailto:mivanapoli@gmail.com">mivanapoli@gmail.com</a>
+  </section>
 </main>
 
 <footer>
   <span>© <span id="year"></span> Raque · Miriam Nápoli</span>
-  <span data-es="Realización audiovisual y fotografía"
-  data-en="Filmmaking & Photography">Realización audiovisual y fotografía</span>
+  <span data-es="Realización audiovisual y fotografía" data-en="Filmmaking &amp; Photography">Realización audiovisual y fotografía</span>
 </footer>
+
+<div class="photo-lightbox" id="photoLightbox" role="dialog" aria-modal="true" aria-label="Fotografía ampliada">
+  <button class="photo-close" id="photoClose" type="button" aria-label="Cerrar fotografía">&times;</button>
+  <img id="photoLightboxImage" src="" alt="Fotografía ampliada">
+</div>
 
 <script>
 let english = false;
@@ -424,48 +397,32 @@ document.getElementById("lang").addEventListener("click", function () {
   this.textContent = english ? "ES" : "EN";
 });
 document.getElementById("year").textContent = new Date().getFullYear();
+
+const photoLightbox = document.getElementById("photoLightbox");
+const photoLightboxImage = document.getElementById("photoLightboxImage");
+const photoClose = document.getElementById("photoClose");
+
+document.querySelectorAll(".photo-grid .project img").forEach(function (photo) {
+  photo.addEventListener("click", function () {
+    photoLightboxImage.src = photo.src;
+    photoLightboxImage.alt = photo.alt;
+    photoLightbox.classList.add("active");
+    photoClose.focus();
+  });
+});
+
+function closePhotoLightbox() {
+  photoLightbox.classList.remove("active");
+  photoLightboxImage.src = "";
+}
+
+photoClose.addEventListener("click", closePhotoLightbox);
+photoLightbox.addEventListener("click", function (event) {
+  if (event.target === photoLightbox) closePhotoLightbox();
+});
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape") closePhotoLightbox();
+});
 </script>
-  
-<div class="photo-lightbox" id="photoLightbox">
-  <button class="photo-close" id="photoClose" aria-label="Cerrar fotografía">&times;</button>
-  <img id="photoLightboxImage" src="" alt="Fotografía ampliada">
-</div>
-
-<script>
-  const photoLightbox = document.getElementById('photoLightbox');
-  const photoLightboxImage = document.getElementById('photoLightboxImage');
-  const photoClose = document.getElementById('photoClose');
-
-  document.querySelectorAll('.photo-grid .project img').forEach(function(photo) {
-    photo.style.cursor = 'zoom-in';
-
-    photo.addEventListener('click', function() {
-      photoLightboxImage.src = photo.src;
-      photoLightboxImage.alt = photo.alt;
-      photoLightbox.classList.add('active');
-    });
-  });
-
-  function closePhotoLightbox() {
-    photoLightbox.classList.remove('active');
-    photoLightboxImage.src = '';
-  }
-
-  photoClose.addEventListener('click', closePhotoLightbox);
-
-  photoLightbox.addEventListener('click', function(event) {
-    if (event.target === photoLightbox) {
-      closePhotoLightbox();
-    }
-  });
-
-  document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape') {
-      closePhotoLightbox();
-    }
-  });
-</script>
-  
 </body>
-  </html>
-  
+</html>
