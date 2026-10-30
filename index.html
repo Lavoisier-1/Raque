@@ -245,6 +245,57 @@ footer {
   cursor: pointer;
   line-height: 1;
 }
+  
+.photo-lightbox {
+  gap: 20px;
+}
+
+.photo-lightbox .photo-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 1px solid rgba(255,255,255,.35);
+  background: rgba(20,20,20,.55);
+  color: white;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  font-size: 22px;
+  cursor: pointer;
+  transition: background .2s, border-color .2s;
+}
+
+.photo-lightbox .photo-nav:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #151515;
+}
+
+.photo-prev { left: 24px; }
+.photo-next { right: 24px; }
+
+.photo-counter {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ddd;
+  font-size: .8rem;
+  letter-spacing: .12em;
+}
+
+@media (max-width: 600px) {
+  .photo-lightbox { padding: 55px 48px 55px; }
+  .photo-lightbox .photo-nav {
+    width: 38px;
+    height: 38px;
+    font-size: 17px;
+  }
+  .photo-prev { left: 7px; }
+  .photo-next { right: 7px; }
+  .photo-lightbox img { max-width: 100%; max-height: 78vh; }
+}
+  
 .photo-grid .project img { cursor: zoom-in; }
 
 @media (max-width: 700px) {
@@ -313,53 +364,95 @@ footer {
     </div>
   </section>
 
-  <section id="photo">
-    <div class="section-head">
-      <div>
-        <span class="eyebrow" data-es="La mirada" data-en="The perspective">La mirada</span>
-        <h2 data-es="Fotografía" data-en="Photography">Fotografía</h2>
-      </div>
-      <p class="intro" data-es="Personas, acontecimientos y momentos que merecen ser contados." data-en="People, events and moments worth telling stories about.">Personas, acontecimientos y momentos que merecen ser contados.</p>
+  
+<section id="photo">
+  <div class="section-head">
+    <div>
+      <span class="eyebrow" data-es="La mirada" data-en="The perspective">La mirada</span>
+      <h2 data-es="Fotografía" data-en="Photography">Fotografía</h2>
     </div>
-    <div class="photo-grid">
-      <article class="project">
-        <img src="images/167539727_10222919801570891_3141188989013659645_n.jpg" alt="Fotografía 1" loading="lazy">
-        <h3>Eventos y cultura</h3><p>Cobertura fotográfica.</p>
-      </article>
-      <article class="project">
-        <img src="images/487130456_10233060315397399_5447747652889975349_n%20(1)%20(1).jpg" alt="Fotografía 2" loading="lazy">
-        <h3>Eventos y cultura</h3><p>Personas y momentos.</p>
-      </article>
-      <article class="project">
-        <img src="images/505814473_10234089469405606_503349318313703175_n%20(1).jpg" alt="Fotografía 3" loading="lazy">
-        <h3>Fotografía documental</h3><p>Historias en imágenes.</p>
-      </article>
-      <article class="project">
-        <img src="images/505848551_10234081465285508_5727832706973108061_n%20(1).jpg" alt="Fotografía 4" loading="lazy">
-        <h3>Personas e historias</h3><p>Retratos y momentos espontáneos.</p>
-      </article>
-      <article class="project">
-        <img src="images/505916501_10234089471525659_4150935935172473964_n%20(1).jpg" alt="Fotografía 5" loading="lazy">
-        <h3>Eventos y cultura</h3><p>Registro de acontecimientos.</p>
-      </article>
-      <article class="project">
-        <img src="images/748208138736903.6222f291d5448.jpg" alt="Fotografía 6" loading="lazy">
-        <h3>Fotografía</h3><p>Composición y mirada visual.</p>
-      </article>
-      <article class="project">
-        <img src="images/9330a5148110861.62cf5ead5baad.jpg" alt="Fotografía 7" loading="lazy">
-        <h3>Fotografía</h3><p>Una historia en cada imagen.</p>
-      </article>
-      <article class="project">
-        <img src="images/d6b73e138736245.6222ec48ab072.jpg" alt="Fotografía 8" loading="lazy">
-        <h3>Fotografía</h3><p>Personas, espacios y detalles.</p>
-      </article>
-      <article class="project">
-        <img src="images/eb9735135717489.61ecdb8a540cc.jpg" alt="Fotografía 9" loading="lazy">
-        <h3>Fotografía</h3><p>Selección de trabajos.</p>
-      </article>
-    </div>
-  </section>
+    <p class="intro"
+       data-es="Personas, acontecimientos y momentos que merecen ser contados."
+       data-en="People, events and moments worth telling stories about.">
+       Personas, acontecimientos y momentos que merecen ser contados.
+    </p>
+  </div>
+
+  <div class="photo-grid">
+    <article class="project">
+      <img src="images/167539727_10222919801570891_3141188989013659645_n.jpg"
+           alt="Personas en el paisaje del salar" loading="lazy">
+      <h3 data-es="Personas y territorio" data-en="People and places">Personas y territorio</h3>
+      <p data-es="Encuentros y experiencias en el paisaje."
+         data-en="Encounters and experiences in the landscape.">Encuentros y experiencias en el paisaje.</p>
+    </article>
+
+    <article class="project">
+      <img src="images/487130456_10233060315397399_5447747652889975349_n%20(1)%20(1).jpg"
+           alt="Retrato colectivo durante un encuentro" loading="lazy">
+      <h3 data-es="Eventos y cultura" data-en="Events and culture">Eventos y cultura</h3>
+      <p data-es="Retratos espontáneos y momentos compartidos."
+         data-en="Candid portraits and shared moments.">Retratos espontáneos y momentos compartidos.</p>
+    </article>
+
+    <article class="project">
+      <img src="images/505814473_10234089469405606_503349318313703175_n%20(1).jpg"
+           alt="Equipo de rafting en aguas rápidas" loading="lazy">
+      <h3 data-es="Deportes y acción" data-en="Sports and action">Deportes y acción</h3>
+      <p data-es="Acción, movimiento y precisión."
+         data-en="Action, movement and timing.">Acción, movimiento y precisión.</p>
+    </article>
+
+    <article class="project">
+      <img src="images/505848551_10234081465285508_5727832706973108061_n%20(1).jpg"
+           alt="Pareja durante una ceremonia" loading="lazy">
+      <h3 data-es="Personas e historias" data-en="People and stories">Personas e historias</h3>
+      <p data-es="Celebraciones y momentos irrepetibles."
+         data-en="Celebrations and unrepeatable moments.">Celebraciones y momentos irrepetibles.</p>
+    </article>
+
+    <article class="project">
+      <img src="images/505916501_10234089471525659_4150935935172473964_n%20(1).jpg"
+           alt="Grupo de rafting en el río" loading="lazy">
+      <h3 data-es="Deportes y acción" data-en="Sports and action">Deportes y acción</h3>
+      <p data-es="La energía de la experiencia colectiva."
+         data-en="The energy of a shared experience.">La energía de la experiencia colectiva.</p>
+    </article>
+
+    <article class="project">
+      <img src="images/748208138736903.6222f291d5448.jpg"
+           alt="Equipo audiovisual durante un rodaje al atardecer" loading="lazy">
+      <h3 data-es="Rodajes y backstage" data-en="Film sets and behind the scenes">Rodajes y backstage</h3>
+      <p data-es="Luz, equipo y trabajo en locación."
+         data-en="Light, crew and on-location work.">Luz, equipo y trabajo en locación.</p>
+    </article>
+
+    <article class="project">
+      <img src="images/9330a5148110861.62cf5ead5baad.jpg"
+           alt="Niño jugando en un espacio recreativo" loading="lazy">
+      <h3 data-es="Personas e historias" data-en="People and stories">Personas e historias</h3>
+      <p data-es="La espontaneidad de los pequeños momentos."
+         data-en="The spontaneity of everyday moments.">La espontaneidad de los pequeños momentos.</p>
+    </article>
+
+    <article class="project">
+      <img src="images/d6b73e138736245.6222ec48ab072.jpg"
+           alt="Interior de una sala de exposiciones" loading="lazy">
+      <h3 data-es="Arte y cultura" data-en="Art and culture">Arte y cultura</h3>
+      <p data-es="Espacios, obras y mirada visual."
+         data-en="Spaces, artworks and visual perspective.">Espacios, obras y mirada visual.</p>
+    </article>
+
+    <article class="project">
+      <img src="images/eb9735135717489.61ecdb8a540cc.jpg"
+           alt="Figura caminando junto al mar" loading="lazy">
+      <h3 data-es="Fotografía autoral" data-en="Personal photography">Fotografía autoral</h3>
+      <p data-es="Paisaje, movimiento y composición."
+         data-en="Landscape, movement and composition.">Paisaje, movimiento y composición.</p>
+    </article>
+  </div>
+</section>
+
 
   <section id="about">
     <div class="about-grid">
@@ -396,10 +489,24 @@ footer {
   <span data-es="Realización audiovisual y fotografía" data-en="Filmmaking &amp; Photography">Realización audiovisual y fotografía</span>
 </footer>
 
-<div class="photo-lightbox" id="photoLightbox" role="dialog" aria-modal="true" aria-label="Fotografía ampliada">
-  <button class="photo-close" id="photoClose" type="button" aria-label="Cerrar fotografía">&times;</button>
+
+<div class="photo-lightbox" id="photoLightbox"
+     role="dialog" aria-modal="true" aria-label="Fotografía ampliada">
+
+  <button class="photo-close" id="photoClose"
+          type="button" aria-label="Cerrar fotografía">&times;</button>
+
+  <button class="photo-nav photo-prev" id="photoPrev"
+          type="button" aria-label="Fotografía anterior">&#10094;</button>
+
   <img id="photoLightboxImage" src="" alt="Fotografía ampliada">
+
+  <button class="photo-nav photo-next" id="photoNext"
+          type="button" aria-label="Fotografía siguiente">&#10095;</button>
+
+  <span class="photo-counter" id="photoCounter">1 / 9</span>
 </div>
+
 
 <script>
 let english = false;
